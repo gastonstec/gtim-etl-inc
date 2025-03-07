@@ -43,11 +43,10 @@ def listar_incidentes():
     except Exception as ex:
         return jsonify({'error': str(ex), 'mensaje': "Error al obtener los datos"}), 500
 
-# Manejo error 404
+# Manejo de error 404
+@app.errorhandler(404)
 def pagina_no_encontrada(error):
-    return "<h1>La página que estas buscando no existe...</h1>"
-    
+    return jsonify({'error': 'La página que estás buscando no existe'}), 404
+
 if __name__ == '__main__':
-    app.config.from_object(config['development'])
-    app.register_error_handler(404, pagina_no_encontrada )
-    app.run()
+    app.run(debug=True)  # Habilita modo debug para ver errores
