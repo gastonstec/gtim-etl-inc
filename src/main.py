@@ -1,18 +1,18 @@
-# Importación de las bibliotecas necesarias
-from flask import Flask, jsonify, request  # Flask para crear la API
-import psycopg2  # Conector para PostgreSQL
-import csv  # Biblioteca para manipulación de archivos CSV
-import io  # Para manejar los flujos de entrada y salida de datos
+from flask import Flask, request, jsonify
+import os
+import pandas as pd
+import psycopg2 
 from psycopg2.extras import RealDictCursor  # Para trabajar con los resultados de la base de datos como diccionarios
-from config import config  # Importa la configuración de la base de datos
+from config import config
 
-app = Flask(__name__)  # Inicializa la aplicación Flask
-app.config.from_object(config['development'])  # Configura la aplicación con los parámetros de desarrollo definidos en el archivo config.py
+app = Flask(__name__)
 
-# Función para establecer la conexión con la base de datos PostgreSQL
+# Configurar la conexión a la base de datos
+app.config.from_object(config['development'])
+
+# Función para establecer la conexión con la base de datos
 def obtener_conexion():
     try:
-        # Se establece la conexión con la base de datos usando parámetros definidos directamente
         return psycopg2.connect(
             host="localhost",
             database="proyecto-incident",
@@ -20,10 +20,9 @@ def obtener_conexion():
             password="31102003"
         )
     except Exception as ex:
-        # Si ocurre un error en la conexión, se muestra un mensaje y se retorna None
         print(f"Error de conexión a la base de datos: {ex}")
         return None
-
+    
 # Ruta para listar todos los incidentes (GET)
 @app.route('/incidentes', methods=['GET'])
 def listar_incidentes():
@@ -212,12 +211,77 @@ def eliminar_incidente(number):
             conexion.close()
         return jsonify({'error': str(ex), 'mensaje': "Error al eliminar el incidente"}), 500
 
+# Ruta para cargar el archivo CSV y procesarlo
+@app.route('/incidentes/upload', methods=['POST'])
+def upload_file():
+    # Crear la carpeta uploads si no existe
+    if not os.path.exists('uploads'):
+        os.makedirs('uploads')
 
-# Manejador de error 404: si la ruta no existe
-@app.errorhandler(404)
-def pagina_no_encontrada(error):
-    return jsonify({'error': 'La página que estás buscando no existe'}), 404
+    # Recibir el archivo desde la solicitud
+    file = request.files['file']
+    filepath = './uploads/incident.csv'
+    
+    # Guardar el archivo en el servidor
+    file.save(filepath)
 
-# Punto de entrada de la aplicación Flask
+    # Llamar al proceso de transformación
+    try:
+        # Transformar el archivo CSV
+        df = pd.read_csv(filepath, delimiter=',', encoding='unicode_escape')
+
+        # Renombrar las columnas y convertir las fechas
+        df = df.rename(columns={
+            'Number': 'number',
+            'State': 'state',
+            'Created': 'created',
+            'Last update': 'last_update',
+            'Incident CI type': 'incident_ci_type',
+            'Affected User': 'affected_user',
+            'User location': 'user_location',
+            'Assignment Group': 'assignment_group',
+            'Assigned to': 'assigned_to',
+            'Urgency': 'urgency',
+            'Severity': 'severity',
+            'Created By': 'created_by',
+            'Updated By': 'updated_by'
+        })
+
+        # Convertir las columnas 'created' y 'last_update' a tipo datetime
+        df['created'] = pd.to_datetime(df['created'], format='%m-%d-%Y %H:%M:%S', errors='coerce')
+        df['last_update'] = pd.to_datetime(df['last_update'], format='%m-%d-%Y %H:%M:%S', errors='coerce')
+
+        # Reemplazar los valores NaN por None en todas las columnas
+        df = df.where(pd.notnull(df), None)
+
+        # Exportar el DataFrame limpio a un nuevo archivo CSV
+        clean_filepath = './uploads/incident_limpio.csv'
+        df.to_csv(clean_filepath, index=False, encoding='utf-8')
+
+        # Llamar al proceso de carga
+        connection = psycopg2.connect(
+            host='localhost',
+            user='postgres',
+            password='31102003',
+            database='proyecto-incident'
+        )
+        cursor = connection.cursor()
+
+        for index, row in df.iterrows():
+            query = """
+                INSERT INTO incidents (number, state, created, last_update, incident_ci_type, affected_user,
+                                      user_location, assignment_group, assigned_to, urgency, severity, created_by, updated_by)
+                VALUES (%s, %s, %s::TIMESTAMP, %s::TIMESTAMP, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """
+            cursor.execute(query, tuple(row))
+
+        connection.commit()
+        cursor.close()
+        connection.close()
+
+        return jsonify({'mensaje': 'Archivo procesado y datos importados exitosamente'}), 200
+    except Exception as ex:
+        return jsonify({'error': str(ex), 'mensaje': 'Error al procesar el archivo'}), 500
+
 if __name__ == '__main__':
-    app.run(debug=True)  # Habilita el modo debug para facilitar la depuración
+    app.run(debug=True)
