@@ -1,14 +1,14 @@
-from flask import Flask, request, jsonify
-import os
-import pandas as pd
-import psycopg2 
-from psycopg2.extras import RealDictCursor  # Para trabajar con los resultados de la base de datos como diccionarios
-from config import config
+from flask import Flask, request, jsonify  # Importa las librerías necesarias de Flask para crear la app, manejar solicitudes HTTP y devolver respuestas JSON
+import os  # Importa la librería para interactuar con el sistema de archivos
+import pandas as pd  # Importa la librería Pandas para manipulación y análisis de datos
+import psycopg2  # Importa psycopg2 para interactuar con la base de datos PostgreSQL
+from psycopg2.extras import RealDictCursor  # Importa un cursor especial que devuelve resultados como diccionarios
+from config import config  # Importa la configuración de la base de datos (probablemente de un archivo config.py)
 
-app = Flask(__name__)
+app = Flask(__name__)  # Crea una instancia de la aplicación Flask
 
 # Configurar la conexión a la base de datos
-app.config.from_object(config['development'])
+app.config.from_object(config['development'])  # Carga la configuración de la base de datos para el entorno de desarrollo desde el archivo de configuración
 
 # Función para establecer la conexión con la base de datos
 def obtener_conexion():
@@ -18,18 +18,18 @@ def obtener_conexion():
             database="proyecto-incident",
             user="postgres",
             password="31102003"
-        )
+        )  # Establece la conexión con la base de datos PostgreSQL
     except Exception as ex:
-        print(f"Error de conexión a la base de datos: {ex}")
-        return None
-    
+        print(f"Error de conexión a la base de datos: {ex}")  # Si ocurre un error, se imprime en la consola
+        return None  # Si no se puede conectar, se retorna None
+
 # Ruta para listar todos los incidentes (GET)
 @app.route('/incidentes', methods=['GET'])
 def listar_incidentes():
-    conexion = obtener_conexion()  # Obtener la conexión a la base de datos
+    conexion = obtener_conexion()  # Obtiene la conexión a la base de datos
     if conexion is None:
-        # Si no hay conexión, se retorna un error
-        return jsonify({'mensaje': "Error de conexión a la base de datos"}), 500
+        return jsonify({'mensaje': "Error de conexión a la base de datos"}), 500  # Si no se pudo conectar, devuelve un error
+
     try:
         # Se crea un cursor para ejecutar la consulta y obtener los datos en formato diccionario
         with conexion.cursor(cursor_factory=RealDictCursor) as cursor:
@@ -39,12 +39,12 @@ def listar_incidentes():
                    created_by, updated_by 
             FROM incidents
             """
-            cursor.execute(sql)  # Ejecuta la consulta
-            datos = cursor.fetchall()  # Recupera todos los registros
+            cursor.execute(sql)  # Ejecuta la consulta SQL
+            datos = cursor.fetchall()  # Recupera todos los registros de la consulta
 
         conexion.close()  # Cierra la conexión a la base de datos
 
-        # Retorna los datos en formato JSON
+        # Devuelve los datos obtenidos en formato JSON
         return jsonify({'incidentes': datos, 'mensaje': "Incidentes listados"})
 
     except Exception as ex:
@@ -54,7 +54,7 @@ def listar_incidentes():
 # Ruta para obtener los detalles de un incidente específico (GET)
 @app.route('/incidentes/<string:number>', methods=['GET'])
 def leer_incidente(number):
-    conexion = obtener_conexion()  # Obtener la conexión a la base de datos
+    conexion = obtener_conexion()  # Obtiene la conexión a la base de datos
     if conexion is None:
         return jsonify({'mensaje': "Error de conexión a la base de datos"}), 500
 
@@ -67,8 +67,8 @@ def leer_incidente(number):
                    created_by, updated_by 
             FROM incidents WHERE number = %s
             """
-            cursor.execute(sql, (number,))  # Se usa un parámetro seguro
-            datos = cursor.fetchone()  # Obtener el primer registro (solo un incidente)
+            cursor.execute(sql, (number,))  # Se usa un parámetro seguro para evitar inyecciones SQL
+            datos = cursor.fetchone()  # Obtiene un solo registro
 
         # Si se encuentra el incidente, se retorna en formato JSON
         if datos:
@@ -77,13 +77,13 @@ def leer_incidente(number):
             return jsonify({'mensaje': "Incidente no encontrado"}), 404
 
     except Exception as ex:
-        # Si ocurre un error al ejecutar la consulta, se retorna el mensaje de error
+        # Si ocurre un error, se captura y se retorna un mensaje de error
         return jsonify({'error': str(ex), 'mensaje': "Error al obtener el incidente"}), 500
 
 # Ruta para agregar un nuevo incidente (POST)
 @app.route('/incidentes', methods=['POST'])
 def agregar_incidente():
-    conexion = obtener_conexion()  # Obtener la conexión a la base de datos
+    conexion = obtener_conexion()  # Obtiene la conexión a la base de datos
     if conexion is None:
         return jsonify({'mensaje': "Error de conexión a la base de datos"}), 500
 
@@ -104,23 +104,23 @@ def agregar_incidente():
                 datos['affected_user'], datos['user_location'], datos['assignment_group'], datos['assigned_to'],
                 datos['urgency'], datos['severity'], datos['created_by'], datos['updated_by']
             ))
-            conexion.commit()  # Guardar los cambios en la base de datos
+            conexion.commit()  # Guarda los cambios en la base de datos
 
-        conexion.close()
+        conexion.close()  # Cierra la conexión
         # Responde con un mensaje de éxito
         return jsonify({'mensaje': "Incidente agregado exitosamente"}), 201
 
     except Exception as ex:
         if conexion:
-            conexion.rollback()  # Si ocurre un error, deshacer los cambios
-            conexion.close()
-        # Retorna un error si algo falla
+            conexion.rollback()  # Si ocurre un error, deshace los cambios
+            conexion.close()  # Cierra la conexión
+        # Devuelve un mensaje de error
         return jsonify({'error': str(ex), 'mensaje': "Error al agregar el incidente"}), 500
 
 # Ruta para actualizar un incidente existente (PUT)
 @app.route('/incidentes/<string:number>', methods=['PUT'])
 def actualizar_incidente(number):
-    conexion = obtener_conexion()  # Obtener la conexión a la base de datos
+    conexion = obtener_conexion()  # Obtiene la conexión a la base de datos
     if conexion is None:
         return jsonify({'mensaje': "Error de conexión a la base de datos"}), 500
 
@@ -131,13 +131,13 @@ def actualizar_incidente(number):
         # Verifica si el incidente existe en la base de datos antes de intentar actualizarlo
         with conexion.cursor() as cursor:
             sql_select = """
-            SELECT number FROM incident WHERE number = %s
+            SELECT number FROM incidents WHERE number = %s
             """
             cursor.execute(sql_select, (number,))
-            incidente_existente = cursor.fetchone()
+            incidente_existente = cursor.fetchone()  # Verifica si el incidente existe
 
             if not incidente_existente:
-                return jsonify({'mensaje': "Incidente no encontrado"}), 404
+                return jsonify({'mensaje': "Incidente no encontrado"}), 404  # Si no existe, retorna un error
 
         # Si el incidente existe, se actualiza
         with conexion.cursor() as cursor:
@@ -162,22 +162,21 @@ def actualizar_incidente(number):
                 datos['affected_user'], datos['user_location'], datos['assignment_group'], datos['assigned_to'],
                 datos['urgency'], datos['severity'], datos['created_by'], datos['updated_by'], number
             ))
-            conexion.commit()  # Guardar los cambios
+            conexion.commit()  # Guarda los cambios
 
-        conexion.close()
-        # Responde con un mensaje de éxito
-        return jsonify({'mensaje': "Incidente actualizado exitosamente"}), 200
+        conexion.close()  # Cierra la conexión
+        return jsonify({'mensaje': "Incidente actualizado exitosamente"}), 200  # Responde con un mensaje de éxito
 
     except Exception as ex:
         if conexion:
-            conexion.rollback()  # Deshacer cambios en caso de error
+            conexion.rollback()  # Deshace cambios en caso de error
             conexion.close()
         return jsonify({'error': str(ex), 'mensaje': "Error al actualizar el incidente"}), 500
 
 # Ruta para eliminar un incidente (DELETE)
 @app.route('/incidentes/<string:number>', methods=['DELETE'])
 def eliminar_incidente(number):
-    conexion = obtener_conexion()  # Obtener la conexión a la base de datos
+    conexion = obtener_conexion()  # Obtiene la conexión a la base de datos
     if conexion is None:
         return jsonify({'mensaje': "Error de conexión a la base de datos"}), 500
 
@@ -188,77 +187,67 @@ def eliminar_incidente(number):
             SELECT number FROM incidents WHERE number = %s
             """
             cursor.execute(sql_select, (number,))
-            incidente_existente = cursor.fetchone()
+            incidente_existente = cursor.fetchone()  # Verifica si el incidente existe
 
             if not incidente_existente:
-                return jsonify({'mensaje': "Incidente no encontrado"}), 404
+                return jsonify({'mensaje': "Incidente no encontrado"}), 404  # Si no existe, retorna un error
 
         # Elimina el incidente
         with conexion.cursor() as cursor:
             sql_delete = """
-            DELETE FROM incident WHERE number = %s
+            DELETE FROM incidents WHERE number = %s
             """
             cursor.execute(sql_delete, (number,))
-            conexion.commit()  # Guardar los cambios
+            conexion.commit()  # Guarda los cambios
 
-        conexion.close()
-        # Responde con un mensaje de éxito
-        return jsonify({'mensaje': "Incidente eliminado exitosamente"}), 200
+        conexion.close()  # Cierra la conexión
+        return jsonify({'mensaje': "Incidente eliminado exitosamente"}), 200  # Responde con un mensaje de éxito
 
     except Exception as ex:
         if conexion:
-            conexion.rollback()  # Deshacer cambios en caso de error
+            conexion.rollback()  # Deshace los cambios si ocurre un error
             conexion.close()
         return jsonify({'error': str(ex), 'mensaje': "Error al eliminar el incidente"}), 500
 
-# Ruta para cargar el archivo CSV y procesarlo
+# Ruta para cargar el archivo CSV y procesarlo (POST)
 @app.route('/incidentes/upload', methods=['POST'])
 def upload_file():
     # Crear la carpeta uploads si no existe
     if not os.path.exists('uploads'):
-        os.makedirs('uploads')
+        os.makedirs('uploads')  # Si no existe la carpeta uploads, la crea
 
-    # Recibir el archivo desde la solicitud
+    # Recibe el archivo desde la solicitud
     file = request.files['file']
-    filepath = './uploads/incident.csv'
+    filepath = './uploads/incident.csv'  # Define la ruta donde se guardará el archivo
     
-    # Guardar el archivo en el servidor
+    # Guarda el archivo en el servidor
     file.save(filepath)
 
-    # Llamar al proceso de transformación
     try:
-        # Transformar el archivo CSV
+        # Lee el archivo CSV con Pandas
         df = pd.read_csv(filepath, delimiter=',', encoding='unicode_escape')
 
-        # Renombrar las columnas y convertir las fechas
+        # Renombra las columnas del archivo CSV
         df = df.rename(columns={
-            'Number': 'number',
-            'State': 'state',
-            'Created': 'created',
-            'Last update': 'last_update',
-            'Incident CI type': 'incident_ci_type',
-            'Affected User': 'affected_user',
-            'User location': 'user_location',
-            'Assignment Group': 'assignment_group',
-            'Assigned to': 'assigned_to',
-            'Urgency': 'urgency',
-            'Severity': 'severity',
-            'Created By': 'created_by',
-            'Updated By': 'updated_by'
+            'Number': 'number', 'State': 'state', 'Created': 'created', 'Last update': 'last_update',
+            'Incident CI type': 'incident_ci_type', 'Affected User': 'affected_user', 'User location': 'user_location',
+            'Assignment Group': 'assignment_group', 'Assigned to': 'assigned_to', 'Urgency': 'urgency',
+            'Severity': 'severity', 'Created By': 'created_by', 'Updated By': 'updated_by'
         })
 
-        # Convertir las columnas 'created' y 'last_update' a tipo datetime
+        # Convertir todas las columnas a tipo string y reemplazar valores vacíos por "NaN"
+        df = df.astype(str)
+        df = df.fillna("NaN")
+        
+        # Convierte las columnas de fecha a tipo datetime
         df['created'] = pd.to_datetime(df['created'], format='%m-%d-%Y %H:%M:%S', errors='coerce')
         df['last_update'] = pd.to_datetime(df['last_update'], format='%m-%d-%Y %H:%M:%S', errors='coerce')
 
-        # Reemplazar los valores NaN por None en todas las columnas
-        df = df.where(pd.notnull(df), None)
-
-        # Exportar el DataFrame limpio a un nuevo archivo CSV
+        # Guarda el archivo CSV limpio
         clean_filepath = './uploads/incident_limpio.csv'
         df.to_csv(clean_filepath, index=False, encoding='utf-8')
 
-        # Llamar al proceso de carga
+        # Conexión a la base de datos
         connection = psycopg2.connect(
             host='localhost',
             user='postgres',
@@ -267,21 +256,20 @@ def upload_file():
         )
         cursor = connection.cursor()
 
+        # Inserta los datos procesados en la base de datos
         for index, row in df.iterrows():
             query = """
                 INSERT INTO incidents (number, state, created, last_update, incident_ci_type, affected_user,
                                       user_location, assignment_group, assigned_to, urgency, severity, created_by, updated_by)
-                VALUES (%s, %s, %s::TIMESTAMP, %s::TIMESTAMP, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
-            cursor.execute(query, tuple(row))
+            cursor.execute(query, tuple(row))  # Inserta cada fila del DataFrame en la base de datos
+        connection.commit()  # Guarda los cambios
 
-        connection.commit()
-        cursor.close()
-        connection.close()
+        return jsonify({'mensaje': 'Archivo procesado e incidentes importados exitosamente'}), 201
 
-        return jsonify({'mensaje': 'Archivo procesado y datos importados exitosamente'}), 200
     except Exception as ex:
-        return jsonify({'error': str(ex), 'mensaje': 'Error al procesar el archivo'}), 500
+        return jsonify({'error': str(ex), 'mensaje': "Error al procesar el archivo CSV"}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
