@@ -260,8 +260,8 @@ def upload_file():
         for index, row in df.iterrows():
             query = """
                 INSERT INTO incidents (number, state, created, last_update, incident_ci_type, affected_user,
-                                      user_location, assignment_group, assigned_to, urgency, severity, created_by, updated_by)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                                  user_location, assignment_group, assigned_to, urgency, severity, created_by, updated_by)
+            VALUES (%s, %s, %s::TIMESTAMP, %s::TIMESTAMP, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
             cursor.execute(query, tuple(row))  # Inserta cada fila del DataFrame en la base de datos
         connection.commit()  # Guarda los cambios
@@ -270,6 +270,114 @@ def upload_file():
 
     except Exception as ex:
         return jsonify({'error': str(ex), 'mensaje': "Error al procesar el archivo CSV"}), 500
+
+# Ruta para actualizar el archivo CSV y procesarlo (POST)
+@app.route('/incidentes/update', methods=['POST'])
+def update_file():
+    # Crear la carpeta 'updates' si no existe
+    if not os.path.exists('updates'):
+        os.makedirs('updates')  # Si no existe la carpeta 'updates', la crea
+
+    # Recibe el archivo desde la solicitud
+    file = request.files['file']
+    filepath = './updates/incident.csv'  # Define la ruta donde se guardará el archivo
+    
+    # Guarda el archivo en el servidor
+    file.save(filepath)
+
+    try:
+        # Lee el archivo CSV con Pandas
+        df = pd.read_csv(filepath, delimiter=',', encoding='unicode_escape')
+
+        # Renombra las columnas del archivo CSV para estandarizar los nombres
+        df = df.rename(columns={
+            'Number': 'number', 'State': 'state', 'Created': 'created', 'Last update': 'last_update',
+            'Incident CI type': 'incident_ci_type', 'Affected User': 'affected_user', 'User location': 'user_location',
+            'Assignment Group': 'assignment_group', 'Assigned to': 'assigned_to', 'Urgency': 'urgency',
+            'Severity': 'severity', 'Created By': 'created_by', 'Updated By': 'updated_by'
+        })
+
+        # Convierte todas las columnas a tipo string y reemplaza los valores vacíos por "NaN"
+        df = df.astype(str)
+        df = df.fillna("NaN")
+        
+        # Convierte las columnas 'created' y 'last_update' a tipo datetime
+        df['created'] = pd.to_datetime(df['created'], format='%m-%d-%Y %H:%M:%S', errors='coerce')
+        df['last_update'] = pd.to_datetime(df['last_update'], format='%m-%d-%Y %H:%M:%S', errors='coerce')
+
+        # Convierte los valores NaT a None (NULL en la base de datos)
+        df['created'] = df['created'].where(pd.notna(df['created']), None)
+        df['last_update'] = df['last_update'].where(pd.notna(df['last_update']), None)
+
+        # Depuración: Verifica las fechas procesadas para asegurarse de que no sean NaT o None
+        print("Fechas procesadas en 'created':", df['created'].head())
+        print("Fechas procesadas en 'last_update':", df['last_update'].head())
+
+        # Guarda el archivo CSV limpio en la carpeta 'updates'
+        clean_filepath = './updates/incident_actualizado.csv'
+        df.to_csv(clean_filepath, index=False, encoding='utf-8')
+
+        # Conexión a la base de datos PostgreSQL
+        connection = psycopg2.connect(
+            host='localhost',
+            user='postgres',
+            password='31102003',
+            database='proyecto-incident'
+        )
+        cursor = connection.cursor()
+
+        # Actualiza los datos procesados en la base de datos
+        for index, row in df.iterrows():
+            query = """
+                INSERT INTO incidents (number, state, created, last_update, incident_ci_type, affected_user,
+                                       user_location, assignment_group, assigned_to, urgency, severity, created_by, updated_by)
+                VALUES (%s, %s, %s::TIMESTAMP, %s::TIMESTAMP, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                ON CONFLICT (number) 
+                DO UPDATE SET 
+                    state = EXCLUDED.state,
+                    last_update = EXCLUDED.last_update,
+                    incident_ci_type = EXCLUDED.incident_ci_type,
+                    affected_user = EXCLUDED.affected_user,
+                    user_location = EXCLUDED.user_location,
+                    assignment_group = EXCLUDED.assignment_group,
+                    assigned_to = EXCLUDED.assigned_to,
+                    urgency = EXCLUDED.urgency,
+                    severity = EXCLUDED.severity,
+                    updated_by = EXCLUDED.updated_by;
+            """
+            cursor.execute(query, tuple(row))  # Inserta o actualiza cada fila del DataFrame en la base de datos
+        connection.commit()  # Guarda los cambios
+
+        # Responde con un mensaje de éxito
+        return jsonify({'mensaje': 'Archivo procesado e incidentes actualizados exitosamente'}), 201
+
+    except Exception as ex:
+        # Manejo de excepciones en caso de error
+        return jsonify({'error': str(ex), 'mensaje': "Error al procesar el archivo CSV"}), 500
+
+# Ruta para eliminar todos los datos dentro de la base de datos (POST)
+@app.route('/incidentes/delete', methods=['DELETE'])
+def delete_all_incidents():
+    try:
+        # Conexión a la base de datos
+        connection = psycopg2.connect(
+            host='localhost',
+            user='postgres',
+            password='31102003',
+            database='proyecto-incident'
+        )
+        cursor = connection.cursor()
+
+        # Eliminar todos los datos de la tabla incidents
+        cursor.execute("DELETE FROM incidents;")
+        connection.commit()  # Guarda los cambios
+
+        # Responde con un mensaje de éxito
+        return jsonify({'mensaje': 'Todos los incidentes han sido eliminados exitosamente'}), 200
+
+    except Exception as ex:
+        # Manejo de excepciones en caso de error
+        return jsonify({'error': str(ex), 'mensaje': "Error al eliminar los incidentes"}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)

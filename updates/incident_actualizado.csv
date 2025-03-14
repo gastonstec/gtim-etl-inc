@@ -1,30 +1,48 @@
-number,state,created,last_update,incident_ci_type,affected_user,user_location,assignment_group,assigned_to,urgency,severity,created_by,updated_by
-INC2909747,New,2025-03-12 15:21:08,2025-03-12 15:40:46,Infrastructure Application,Aldair Vega,Monterrey Supermatic,GTI-LAR-SDK-WEB-TICKETS,,4 - Low,3 - Low,HERNM239,MATOSM9
+number,state,created,last_update,incident_ci_type,affected_user,user_location,assignment_group,assigned_to,severity,Severity.1,created_by,updated_by
+INC2910950,New,2025-03-13 18:08:55,2025-03-13 18:13:11,Infrastructure Application,Edna Martinez Barragan,Monterrey Ad Center,GTI-LAR-SDK-LVL1,nan,4 - Low,3 - Low,HERNM239,system
+INC2910927,New,2025-03-13 17:12:56,2025-03-13 17:23:40,Application,Isaias Vasquez,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,nan,4 - Low,3 - Low,HERNM239,HERNM239
+INC2909747,New,2025-03-12 15:21:08,2025-03-13 17:06:19,Infrastructure Application,Aldair Vega,Monterrey Supermatic,GTI-LAR-SDK-WEB-TICKETS,nan,4 - Low,3 - Low,HERNM239,HERNM239
+INC2910919,New,2025-03-13 16:52:35,2025-03-13 16:59:12,Application,Maria De Jesus Pizana,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,nan,4 - Low,3 - Low,HERNM239,HERNM239
+INC2910886,On Hold,2025-03-13 16:00:01,2025-03-13 16:45:00,Application,Teresa Cano,Monterrey Add Center WMEX,GTI-LAR-SDK-WEB-TICKETS,Violeta Garcia,4 - Low,3 - Low,HERNM239,GARCIV47
+INC2909548,On Hold,2025-03-12 11:08:59,2025-03-13 15:50:19,Infrastructure Application,Jorge Garcia,Monterrey HORIZON WIN,GTI-LAR-SDK-LVL1,Violeta Garcia,4 - Low,3 - Low,GARCJ253,GARCIV47
+INC2910834,On Hold,2025-03-13 14:56:30,2025-03-13 15:48:32,Infrastructure Application,Luis Ricardo Ascencion,Monterrey HORIZON WIN,GTI-LAR-SDK-LVL1,Violeta Garcia,4 - Low,3 - Low,GARCJ253,GARCIV47
+INC2881284,Resolved,2025-02-11 13:02:45,2025-03-13 15:47:10,Hardware,Alva Mariana Lopez,Monterrey BSC WMEX,GTI - Desk Side - Mexico - BSC,Edgar Guevara,4 - Low,3 - Low,LOPEA68,GUEVAE6
+INC2910622,Resolved,2025-03-13 09:50:26,2025-03-13 15:45:20,Computer,Obed Richael Mendez,Monterrey Add Center WMEX,GTI - Desk Side - Mexico - BSC,Edgar Guevara,4 - Low,3 - Low,GARCJ253,GUEVAE6
+INC2910642,Resolved,2025-03-13 10:17:54,2025-03-13 15:42:32,Technical Service,Andrea Araceli Tamez,Monterrey WS WMEX,GTI - Desk Side - Mexico - BSC,Edgar Guevara,4 - Low,3 - Low,TAMEZA5,GUEVAE6
+INC2905445,Resolved,2025-03-08 15:27:39,2025-03-13 15:41:55,SAP CI Application,Jesus Ovando,Monterrey HORIZON WIN,GTI-LAR-SDK-WEB-TICKETS,Violeta Garcia,4 - Low,3 - Low,LOPEZF43,GARCIV47
+INC2910741,New,2025-03-13 11:49:12,2025-03-13 15:40:26,Computer,Jahir Mora,Monterrey BSC WMEX,GTI - Desk Side - Mexico - SUPSA,nan,4 - Low,3 - Low,GARCJ253,GUEVAE6
+INC2910626,Resolved,2025-03-13 09:57:49,2025-03-13 15:36:43,Computer,Graciela Aguillon,Monterrey TAW WMEX,GTI - Desk Side - Mexico - SUPSA,Joel Trevino,4 - Low,3 - Low,GARCJ253,SALADM2
+INC2908575,On Hold,2025-03-11 15:53:33,2025-03-13 15:26:40,Infrastructure Application,Jose de Jesus Palomo,Ramos Arizpe WIN,GTI-LAR-SDK-WEB-TICKETS,Violeta Garcia,4 - Low,3 - Low,ANGUIM5,GARCIV47
+INC2906299,On Hold,2025-03-09 14:29:57,2025-03-13 15:24:00,Infrastructure Application,Ramiro Quiroz,Monterrey Supermatic,GTI-LAR-SDK-LVL1,Violeta Garcia,4 - Low,3 - Low,GARCJ253,GARCIV47
+INC2910784,Resolved,2025-03-13 13:08:55,2025-03-13 15:15:50,Infrastructure Application,Gloria Santillan,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Felipe Lopez,4 - Low,3 - Low,GARCJ253,LOPEZF43
+INC2904671,On Hold,2025-03-07 16:19:36,2025-03-13 15:10:53,Infrastructure Application,Maria Martinez,Celaya ERNA,GTI-LAR-SDK-LVL1,Violeta Garcia,4 - Low,3 - Low,HERNM239,GARCIV47
+INC2909409,On Hold,2025-03-12 09:25:43,2025-03-13 15:03:52,Infrastructure Application,Jose Guadalupe Rico,Celaya ERNA,GTI-LAR-SDK-WEB-TICKETS,Violeta Garcia,4 - Low,3 - Low,GARCJ253,GARCIV47
+INC2910737,On Hold,2025-03-13 11:40:33,2025-03-13 15:03:10,Infrastructure Application,Jaquelin Alejandra Rodriguez,Ramos Arizpe WIN,GTI-LAR-SDK-LVL1,Janett Garcia,4 - Low,3 - Low,GARCJ253,GARCJ253
+INC2910733,Resolved,2025-03-13 11:35:47,2025-03-13 14:41:41,Computer,Miriam Belman,Celaya Ventas,GTI - Desk Side -  Mexico - Celaya,Erick Estrada,4 - Low,3 - Low,GARCJ253,ESTRAE14
+INC2908629,On Hold,2025-03-11 17:38:33,2025-03-13 14:40:51,Application,Israel Cifuentes,Monterrey Supermatic,GTI-LAR-SDK-WEB-TICKETS,Felipe Lopez,4 - Low,3 - Low,HERNM239,LOPEZF43
+INC2907459,On Hold,2025-03-10 15:27:59,2025-03-13 14:34:42,Application,Jose Raymundo Garcia,Monterrey BSC WMEX,GTI-LAR-SDK-WEB-TICKETS,Violeta Garcia,4 - Low,3 - Low,ANGUIM5,GARCJ119
+INC2901501,On Hold,2025-03-05 11:04:59,2025-03-13 13:31:41,Application,Armando Madrid,Monterrey BSC WMEX,GTI-LAR-SDK-WEB-TICKETS,Felipe Lopez,4 - Low,3 - Low,PEREZD46,SANCHG27
+INC2884280,Resolved,2025-02-14 08:46:44,2025-03-13 12:08:46,Accessory,Micaela SaldaÃ±a,Monterrey HORIZON,GTI - Desk Side - Mexico - Horizon,Josue Covarrubias,4 - Low,3 - Low,LOPEZC82,LOPEZE77
+INC2910720,Work In Progress,2025-03-13 11:22:08,2025-03-13 11:26:25,Application,Brenda Lizeth De La Cruz,Monterrey HORIZON WIN,GTI - Desk Side - Mexico - Horizon,Josue Covarrubias,4 - Low,3 - Low,GARCJ253,CASTIR25
+INC2909821,On Hold,2025-03-12 18:03:43,2025-03-13 11:24:59,Infrastructure Application,Yolanda Carranza,Ramos Arizpe WIN,GTI-LAR-SDK-WEB-TICKETS,Violeta Garcia,4 - Low,3 - Low,HERNM239,GARCIV47
+INC2908498,Work In Progress,2025-03-11 13:15:47,2025-03-13 10:37:00,Technical Service,Adan Francisco Casas,Ramos Arizpe WIN,GTI - Desk Side - Mexico - Ramos Arizpe,Eber Gonzalez,4 - Low,3 - Low,MUNIZC8,system
+INC2908460,Resolved,2025-03-11 11:58:16,2025-03-13 10:23:18,Accessory,Ugo Langarica,Monterrey CETEC,GTI - Desk Side - Mexico - PROLOGIS,Alejandro Alvarado1,4 - Low,3 - Low,LOPEZC82,ALVARA56
+INC2908644,Resolved,2025-03-11 18:11:15,2025-03-13 10:00:00,Infrastructure Application,Jesus Gilberto Hernandez,Ramos Arizpe WIN,GTI-LAR-SDK-WEB-TICKETS,Daniela Perez,4 - Low,3 - Low,HERNM239,PEREZD46
+INC2907371,Resolved,2025-03-10 13:47:02,2025-03-13 09:25:11,Infrastructure Application,Guadalupe De Leon,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Clara Lopez,4 - Low,3 - Low,LOPEZC82,LOPEZC82
+INC2908507,Resolved,2025-03-11 13:49:49,2025-03-13 09:22:31,Infrastructure Application,Javier Aguilera,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Clara Lopez,4 - Low,3 - Low,LOPEZC82,LOPEZC82
 INC2897104,Resolved,2025-02-28 14:06:19,2025-03-12 14:55:22,Virtual Private Network,CARMEN GAMEZ,Ramos Arizpe WIN,GTI - Desk Side - Mexico - Ramos Arizpe,Alondra Reyna,3 - Medium,3 - Low,GARCA116,REYNAA22
-INC2908376,On Hold,2025-03-11 10:50:40,2025-03-12 14:08:14,Infrastructure Application,Angela Garcia,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Violeta Garcia,4 - Low,3 - Low,LOPEZC82,GARCIV47
-INC2908507,On Hold,2025-03-11 13:49:49,2025-03-12 14:02:34,Infrastructure Application,Javier Aguilera,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Clara Lopez,4 - Low,3 - Low,LOPEZC82,AGUILJ40
-INC2907371,On Hold,2025-03-10 13:47:02,2025-03-12 13:56:29,Infrastructure Application,Guadalupe De Leon,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Clara Lopez,4 - Low,3 - Low,LOPEZC82,LOPEZC82
 INC2908465,Resolved,2025-03-11 12:01:12,2025-03-12 13:53:52,Infrastructure Application,Alberto Manuel Maldonado,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Clara Lopez,4 - Low,3 - Low,LOPEZC82,LOPEZC82
-INC2906299,On Hold,2025-03-09 14:29:57,2025-03-12 13:50:16,Infrastructure Application,Ramiro Quiroz,Monterrey Supermatic,GTI-LAR-SDK-LVL1,Violeta Garcia,4 - Low,3 - Low,GARCJ253,GARCIV47
-INC2909594,New,2025-03-12 12:03:19,2025-03-12 13:41:50,Infrastructure Application,ESTEBAN ARRAMBIDE,Monterrey CETEC,Desk Side - LAR - Colombia,,4 - Low,3 - Low,GONZS10,GARCIV47
-INC2909548,On Hold,2025-03-12 11:08:59,2025-03-12 13:40:07,Infrastructure Application,Jorge Garcia,Monterrey HORIZON WIN,GTI-LAR-SDK-LVL1,Violeta Garcia,4 - Low,3 - Low,GARCJ253,GARCIV47
-INC2909528,On Hold,2025-03-12 10:59:12,2025-03-12 12:47:34,Personal Computer,HUGO HERNANDEZ,Celaya CAW,GTI - Desk Side -  Mexico - Celaya,Martin Lemus,4 - Low,3 - Low,HERNAH13,system
+INC2909594,New,2025-03-12 12:03:19,2025-03-12 13:41:50,Infrastructure Application,ESTEBAN ARRAMBIDE,Monterrey CETEC,Desk Side - LAR - Colombia,nan,4 - Low,3 - Low,GONZS10,GARCIV47
 INC2909456,Resolved,2025-03-12 10:29:53,2025-03-12 12:15:51,Computer,Hannya Pinera,Monterrey CETEC,GTI - Desk Side - Mexico - PROLOGIS,Alejandro Alvarado1,4 - Low,3 - Low,GARCJ253,ALVARA56
-INC2908644,On Hold,2025-03-11 18:11:15,2025-03-12 11:35:01,Infrastructure Application,Jesus Gilberto Hernandez,Ramos Arizpe WIN,GTI-LAR-SDK-WEB-TICKETS,Daniela Perez,4 - Low,3 - Low,HERNM239,PEREZD46
 INC2901563,Resolved,2025-03-05 12:16:03,2025-03-12 11:17:20,Infrastructure Application,Teresa De Jesus Mora,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Janett Garcia,4 - Low,3 - Low,GARCJ253,PEREZD46
-INC2908498,On Hold,2025-03-11 13:15:47,2025-03-12 10:33:08,Technical Service,Adan Francisco Casas,Ramos Arizpe WIN,GTI - Desk Side - Mexico - Ramos Arizpe,Eber Gonzalez,4 - Low,3 - Low,MUNIZC8,GONZAE91
 INC2908898,Resolved,2025-03-12 00:20:45,2025-03-12 09:50:39,Application,Alejandro Arambula,Monterrey IT,GTI - Desk Side - Mexico - SUPSA,Mitzi Salado,3 - Medium,3 - Low,ARAMBA1,SALADM2
 INC2908492,Resolved,2025-03-11 13:06:03,2025-03-12 09:06:37,Computer,Carlos Tovar,Celaya ERNA,GTI - Desk Side -  Mexico - Celaya,Erick Estrada,4 - Low,3 - Low,GARCJ253,ESTRAE14
-INC2908575,On Hold,2025-03-11 15:53:33,2025-03-12 08:59:29,Infrastructure Application,Jose de Jesus Palomo,Ramos Arizpe WIN,GTI-LAR-SDK-WEB-TICKETS,Violeta Garcia,4 - Low,3 - Low,ANGUIM5,GARCIV47
 INC2907054,Resolved,2025-03-10 08:05:52,2025-03-12 08:52:11,Application,Pedro Ivan Salvador,Monterrey HORIZON WIN,GTI-LAR-SDK-WEB-TICKETS,Violeta Garcia,4 - Low,3 - Low,SALVAP2,SALVAP2
 INC2908628,On Hold,2025-03-11 17:37:34,2025-03-11 19:10:49,Infrastructure Application,Ivonne Araceli Daza,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Marcela Anguiano,4 - Low,3 - Low,ANGUIM5,ANGUIM5
 INC2908636,Resolved,2025-03-11 17:54:03,2025-03-11 17:56:40,Infrastructure Application,Nadia Evangelina Ramirez,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Marcela Anguiano,4 - Low,3 - Low,ANGUIM5,ANGUIM5
 INC2907368,Resolved,2025-03-10 13:44:05,2025-03-11 16:24:13,Infrastructure Application,URY JAHAZZIEL PUENTE,Monterrey HORIZON WIN,GTI-LAR-SDK-LVL1,Janett Garcia,4 - Low,3 - Low,GARCJ253,GARCJ253
-INC2908460,New,2025-03-11 11:58:16,2025-03-11 16:08:33,Accessory,Ugo Langarica,Monterrey CETEC,GTI - Desk Side - Mexico - PROLOGIS,,4 - Low,3 - Low,LOPEZC82,TOVARA17
-INC2905445,On Hold,2025-03-08 15:27:39,2025-03-11 15:24:50,SAP CI Application,Jesus Ovando,Monterrey HORIZON WIN,GTI-LAR-SDK-WEB-TICKETS,Violeta Garcia,4 - Low,3 - Low,LOPEZF43,GARCIV47
 INC2901616,Resolved,2025-03-05 13:43:11,2025-03-11 15:22:23,Infrastructure Application,Victor Manuel MENDEZ,Celaya ERNA,GTI-LAR-SDK-LVL1,Violeta Garcia,4 - Low,3 - Low,GARCJ253,GARCIV47
 INC2903051,Resolved,2025-03-06 12:45:39,2025-03-11 15:15:21,Infrastructure Application,Victor Manuel MENDEZ,Celaya ERNA,GTI-LAR-SDK-LVL1,Felipe Lopez,4 - Low,3 - Low,GARCJ253,LOPEZF43
-INC2904671,On Hold,2025-03-07 16:19:36,2025-03-11 15:01:00,Infrastructure Application,Maria Martinez,Celaya ERNA,GTI-LAR-SDK-LVL1,Violeta Garcia,4 - Low,3 - Low,HERNM239,GARCIV47
 INC2895337,Resolved,2025-02-26 15:26:42,2025-03-11 14:46:06,Hardware,Ruben Hernandez,Monterrey CEDIS PROLOGIS WMEX,GTI - Desk Side - Mexico - PROLOGIS,Alejandro Alvarado1,4 - Low,3 - Low,HERNM239,ALVARA56
 INC2899314,Resolved,2025-03-03 14:16:15,2025-03-11 14:33:41,Technical Service,Brenda Patricia De Leon,Monterrey CETEC WMEX,GTI - Desk Side - Mexico - PROLOGIS,Alejandro Alvarado1,4 - Low,3 - Low,ANGUIM5,ALVARA56
 INC2908467,Resolved,2025-03-11 12:09:01,2025-03-11 12:09:28,Infrastructure Application,Izet Selene Sanchez,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Clara Lopez,4 - Low,3 - Low,LOPEZC82,LOPEZC82
@@ -36,7 +54,6 @@ INC2903099,Resolved,2025-03-06 14:07:48,2025-03-11 10:44:55,Infrastructure Appli
 INC2901731,Resolved,2025-03-05 16:39:52,2025-03-11 10:25:17,Infrastructure Application,Irma Galvan,Celaya ERNA,GTI-LAR-SDK-LVL1,Marcela Anguiano,4 - Low,3 - Low,ANGUIM5,PEREZD46
 INC2902903,Resolved,2025-03-06 10:14:44,2025-03-11 10:20:20,Hardware,Miriam Belman,Celaya Ventas,GTI - Desk Side -  Mexico - Celaya,Erick Estrada,4 - Low,3 - Low,BELMAMG,ESTRAE14
 INC2908303,Resolved,2025-03-11 09:20:49,2025-03-11 10:01:10,Personal Computer,Martin Cruz,MÃ©xico Ventas,GTI - Desk Side - Mexico - CDMX,Martin Cruz,3 - Medium,3 - Low,CRUZM114,CRUZM114
-INC2881284,On Hold,2025-02-11 13:02:45,2025-03-11 07:51:30,Hardware,Alva Mariana Lopez,Monterrey BSC WMEX,GTI - Desk Side - Mexico - BSC,Edgar Guevara,4 - Low,3 - Low,LOPEA68,URQUIS
 INC2907461,Resolved,2025-03-10 15:30:29,2025-03-10 15:34:47,Infrastructure Application,Harrison Cardenas,Bogota Office,GTI-LAR-SDK-LVL1,Marcela Anguiano,4 - Low,3 - Low,ANGUIM5,ANGUIM5
 INC2907353,Resolved,2025-03-10 13:17:56,2025-03-10 13:54:39,Infrastructure Application,JOSE PADILLA,Guadalajara WMEX,GTI-LAR-SDK-LVL1,Janett Garcia,4 - Low,3 - Low,GARCJ253,GARCJ253
 INC2904427,Resolved,2025-03-07 12:37:03,2025-03-10 12:18:49,Infrastructure Application,Jose Adrian Martinez,Monterrey HORIZON WIN,GTI-LAR-SDK-LVL1,Clara Lopez,4 - Low,3 - Low,LOPEZC82,PEREZD46
@@ -54,15 +71,5 @@ INC2904453,Resolved,2025-03-07 12:51:14,2025-03-08 12:05:44,Application,Ximena M
 INC2904438,Resolved,2025-03-07 12:43:52,2025-03-08 12:05:08,Infrastructure Application,Alan Munoz,Benton Harbor - GHQ - Ad Center,GTI-LAR-SDK-LVL1,Clara Lopez,4 - Low,3 - Low,LOPEZC82,LOPEZC82
 INC2897131,Resolved,2025-02-28 14:50:46,2025-03-08 10:44:19,Application,Francisco Caro,Monterrey Add Center WMEX,GTI-LAR-SDK-WEB-TICKETS,Clara Lopez,4 - Low,3 - Low,HERNM239,LOPEZC82
 INC2904470,Resolved,2025-03-07 13:06:42,2025-03-08 10:43:46,SAP CI Application,Martha Elba Yanez,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Clara Lopez,4 - Low,3 - Low,LOPEZC82,LOPEZC82
-INC2904808,Resolved,2025-03-07 19:55:11,2025-03-07 20:13:05,Infrastructure Application,Aldair Vega,Monterrey Supermatic,GTI-LAR-SDK-LVL1,Maria Hernandez,4 - Low,3 - Low,HERNM239,HERNM239
-INC2895336,Resolved,2025-02-26 15:25:33,2025-03-07 13:53:40,Application,Izet Selene Sanchez,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Daniela Perez,4 - Low,3 - Low,ANGUIM5,PEREZD46
-INC2903897,Resolved,2025-03-07 06:46:43,2025-03-07 12:17:15,Infrastructure Application,Juan Carlos Rodriguez,Ramos Arizpe WIN,GTI-LAR-SDK-LVL1,Clara Lopez,4 - Low,3 - Low,LOPEZC82,LOPEZC82
-INC2904362,Resolved,2025-03-07 11:40:40,2025-03-07 11:53:41,PC Engineering,Mayra Veronica Gonzalez,Monterrey BSC WMEX,GTI-LAR-SDK-LVL1,Clara Lopez,4 - Low,3 - Low,LOPEZC82,LOPEZC82
-INC2901570,Resolved,2025-03-05 12:27:02,2025-03-07 10:23:08,Infrastructure Application,Sebastian Emiliano Escobedo,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Janett Garcia,4 - Low,3 - Low,GARCJ253,PEREZD46
-INC2901528,Resolved,2025-03-05 11:38:17,2025-03-07 10:21:17,Infrastructure Application,Ana Karen Jimenez,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Janett Garcia,4 - Low,3 - Low,GARCJ253,PEREZD46
-INC2900222,Resolved,2025-03-04 10:42:38,2025-03-07 10:15:46,Infrastructure Application,Raul Solis,Monterrey Supermatic,GTI-LAR-SDK-LVL1,Violeta Garcia,4 - Low,3 - Low,LOPEZC82,PEREZD46
-INC2901473,Resolved,2025-03-05 10:48:35,2025-03-07 09:24:18,Infrastructure Application,Diego Alejandro Mancilla,Monterrey Supermatic,GTI-LAR-SDK-LVL1,Clara Lopez,4 - Low,3 - Low,LOPEZC82,LOPEZC82
-INC2903027,Resolved,2025-03-06 12:15:42,2025-03-07 08:43:43,Hardware,Diego Cisneros,Whirlpool Plastics WIN,GTI - Desk Side - Mexico - Plastics,Andres Hernandez,4 - Low,3 - Low,CISNEDA,HERNA289
 INC2896196,On Hold,2025-02-27 13:54:25,2025-03-07 07:24:57,Computer,Maricela Rodriguez,Ramos Arizpe WIN,GTI - Desk Side - Mexico - Ramos Arizpe,Edgar Lara,4 - Low,3 - Low,GARCJ253,LARAE21
-INC2900129,Work In Progress,2025-03-04 09:39:31,2025-03-04 10:30:05,PC Engineering,Jorge Luis Rubio,Monterrey HORIZON WIN,GTI - Desk Side - Mexico - Horizon,Josue Covarrubias,4 - Low,3 - Low,LOPEZC82,CASTIR25
 INC2851503,On Hold,2025-01-09 13:21:33,2025-02-28 12:35:37,Hardware,RAFAEL Flores,Guatemala Sales,Desk Side - LAR - Guatemala,Pedro Boc,4 - Low,3 - Low,BOCP,BOCP

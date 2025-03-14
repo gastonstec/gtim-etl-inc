@@ -1,0 +1,68 @@
+Number,State,Created,Last update,Incident CI type,Affected User,User location,Assignment Group,Assigned to,Urgency,Severity,Created By,Updated By
+INC2909747,New,03/12/2025 15:21,03/12/2025 15:40,Hardware,Aldair Vega,Monterrey Supermatic,GTI-LAR-SDK-WEB-TICKETS,,4 - Low,3 - Low,HERNM239,MATOSM9
+INC2897104,New,02-28-2025 14:06:19,03/12/2025 14:55,Hardware,CARMEN GAMEZ,Ramos Arizpe WIN,GTI - Desk Side - Mexico - Ramos Arizpe,Alondra Reyna,3 - Medium,3 - Low,GARCA116,REYNAA22
+INC2908376,New,03/11/2025 10:50,03/12/2025 14:08,Hardware,Angela Garcia,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Violeta Garcia,4 - Low,3 - Low,LOPEZC82,GARCIV47
+INC2908507,New,03/11/2025 13:49,03/12/2025 14:02,Hardware,Javier Aguilera,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Clara Lopez,4 - Low,3 - Low,LOPEZC82,AGUILJ40
+INC2907371,New,03/10/2025 13:47,03/12/2025 13:56,Hardware,Guadalupe De Leon,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Clara Lopez,4 - Low,3 - Low,LOPEZC82,LOPEZC82
+INC2908465,New,03/11/2025 12:01,03/12/2025 13:53,Hardware,Alberto Manuel Maldonado,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Clara Lopez,4 - Low,3 - Low,LOPEZC82,LOPEZC82
+INC2906299,New,03/09/2025 14:29,03/12/2025 13:50,Hardware,Ramiro Quiroz,Monterrey Supermatic,GTI-LAR-SDK-LVL1,Violeta Garcia,4 - Low,3 - Low,GARCJ253,GARCIV47
+INC2909594,New,03/12/2025 12:03,03/12/2025 13:41,Hardware,ESTEBAN ARRAMBIDE,Monterrey CETEC,Desk Side - LAR - Colombia,,4 - Low,3 - Low,GONZS10,GARCIV47
+INC2909548,New,03/12/2025 11:08,03/12/2025 13:40,Hardware,Jorge Garcia,Monterrey HORIZON WIN,GTI-LAR-SDK-LVL1,Violeta Garcia,4 - Low,3 - Low,GARCJ253,GARCIV47
+INC2909528,New,03/12/2025 10:59,03/12/2025 12:47,Hardware,HUGO HERNANDEZ,Celaya CAW,GTI - Desk Side -  Mexico - Celaya,Martin Lemus,4 - Low,3 - Low,HERNAH13,system
+INC2909456,New,03/12/2025 10:29,03/12/2025 12:15,Hardware,Hannya Pinera,Monterrey CETEC,GTI - Desk Side - Mexico - PROLOGIS,Alejandro Alvarado1,4 - Low,3 - Low,GARCJ253,ALVARA56
+INC2908644,New,03/11/2025 18:11,03/12/2025 11:35,Hardware,Jesus Gilberto Hernandez,Ramos Arizpe WIN,GTI-LAR-SDK-WEB-TICKETS,Daniela Perez,4 - Low,3 - Low,HERNM239,PEREZD46
+INC2901563,New,03/05/2025 12:16,03/12/2025 11:17,Hardware,Teresa De Jesus Mora,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Janett Garcia,4 - Low,3 - Low,GARCJ253,PEREZD46
+INC2908498,New,03/11/2025 13:15,03/12/2025 10:33,Hardware,Adan Francisco Casas,Ramos Arizpe WIN,GTI - Desk Side - Mexico - Ramos Arizpe,Eber Gonzalez,4 - Low,3 - Low,MUNIZC8,GONZAE91
+INC2908898,New,03/12/2025 00:20,03/12/2025 09:50,Hardware,Alejandro Arambula,Monterrey IT,GTI - Desk Side - Mexico - SUPSA,Mitzi Salado,3 - Medium,3 - Low,ARAMBA1,SALADM2
+INC2908492,New,03/11/2025 13:06,03/12/2025 09:06,Hardware,Carlos Tovar,Celaya ERNA,GTI - Desk Side -  Mexico - Celaya,Erick Estrada,4 - Low,3 - Low,GARCJ253,ESTRAE14
+INC2908575,New,03/11/2025 15:53,03/12/2025 08:59,Hardware,Jose de Jesus Palomo,Ramos Arizpe WIN,GTI-LAR-SDK-WEB-TICKETS,Violeta Garcia,4 - Low,3 - Low,ANGUIM5,GARCIV47
+INC2907054,New,03/10/2025 08:05,03/12/2025 08:52,Hardware,Pedro Ivan Salvador,Monterrey HORIZON WIN,GTI-LAR-SDK-WEB-TICKETS,Violeta Garcia,4 - Low,3 - Low,SALVAP2,SALVAP2
+INC2908628,New,03/11/2025 17:37,03/11/2025 19:10,Hardware,Ivonne Araceli Daza,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Marcela Anguiano,4 - Low,3 - Low,ANGUIM5,ANGUIM5
+INC2908636,New,03/11/2025 17:54,03/11/2025 17:56,Hardware,Nadia Evangelina Ramirez,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Marcela Anguiano,4 - Low,3 - Low,ANGUIM5,ANGUIM5
+INC2907368,New,03/10/2025 13:44,03/11/2025 16:24,Hardware,URY JAHAZZIEL PUENTE,Monterrey HORIZON WIN,GTI-LAR-SDK-LVL1,Janett Garcia,4 - Low,3 - Low,GARCJ253,GARCJ253
+INC2908460,New,03/11/2025 11:58,03/11/2025 16:08,Hardware,Ugo Langarica,Monterrey CETEC,GTI - Desk Side - Mexico - PROLOGIS,,4 - Low,3 - Low,LOPEZC82,TOVARA17
+INC2905445,New,03/08/2025 15:27,03/11/2025 15:24,Hardware,Jesus Ovando,Monterrey HORIZON WIN,GTI-LAR-SDK-WEB-TICKETS,Violeta Garcia,4 - Low,3 - Low,LOPEZF43,GARCIV47
+INC2901616,New,03/05/2025 13:43,03/11/2025 15:22,Hardware,Victor Manuel MENDEZ,Celaya ERNA,GTI-LAR-SDK-LVL1,Violeta Garcia,4 - Low,3 - Low,GARCJ253,GARCIV47
+INC2903051,New,03/06/2025 12:45,03/11/2025 15:15,Hardware,Victor Manuel MENDEZ,Celaya ERNA,GTI-LAR-SDK-LVL1,Felipe Lopez,4 - Low,3 - Low,GARCJ253,LOPEZF43
+INC2904671,New,03/07/2025 16:19,03/11/2025 15:01,Hardware,Maria Martinez,Celaya ERNA,GTI-LAR-SDK-LVL1,Violeta Garcia,4 - Low,3 - Low,HERNM239,GARCIV47
+INC2895337,New,02-26-2025 15:26:42,03/11/2025 14:46,Hardware,Ruben Hernandez,Monterrey CEDIS PROLOGIS WMEX,GTI - Desk Side - Mexico - PROLOGIS,Alejandro Alvarado1,4 - Low,3 - Low,HERNM239,ALVARA56
+INC2899314,New,03/03/2025 14:16,03/11/2025 14:33,Hardware,Brenda Patricia De Leon,Monterrey CETEC WMEX,GTI - Desk Side - Mexico - PROLOGIS,Alejandro Alvarado1,4 - Low,3 - Low,ANGUIM5,ALVARA56
+INC2908467,New,03/11/2025 12:09,03/11/2025 12:09,Hardware,Izet Selene Sanchez,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Clara Lopez,4 - Low,3 - Low,LOPEZC82,LOPEZC82
+INC2902961,New,03/06/2025 11:06,03/11/2025 12:03,Hardware,Rosario Rosales,Monterrey HORIZON WIN,GTI - Desk Side - Mexico - Horizon,Josue Covarrubias,4 - Low,3 - Low,GARCJ253,GUEVAE6
+INC2907465,New,03/10/2025 15:53,03/11/2025 11:32,Hardware,Jessica Anai Aguirre,Monterrey BSC WMEX,GTI - Desk Side - Mexico - BSC,Edgar Guevara,4 - Low,3 - Low,AGUIRJ11,GUEVAE6
+INC2908348,New,03/11/2025 10:23,03/11/2025 11:14,Hardware,Jose Enrique Sierra,Monterrey CEDIS Apodaca WMEX,GTI-LAR-SDK-LVL1,Janett Garcia,4 - Low,3 - Low,GARCJ253,GARCJ253
+INC2908375,New,03/11/2025 10:48,03/11/2025 10:50,Hardware,GUILLERMO SILVA,Celaya ERNA,GTI - Desk Side -  Mexico - Celaya,Pedro Jimenez,4 - Low,3 - Low,JIMENP19,JIMENP19
+INC2903099,New,03/06/2025 14:07,03/11/2025 10:44,Hardware,Carlos Daniel Lopez,Monterrey Supermatic,GTI-LAR-SDK-LVL1,Violeta Garcia,4 - Low,3 - Low,GARCJ253,GARCIV47
+INC2901731,New,03/05/2025 16:39,03/11/2025 10:25,Hardware,Irma Galvan,Celaya ERNA,GTI-LAR-SDK-LVL1,Marcela Anguiano,4 - Low,3 - Low,ANGUIM5,PEREZD46
+INC2902903,New,03/06/2025 10:14,03/11/2025 10:20,Hardware,Miriam Belman,Celaya Ventas,GTI - Desk Side -  Mexico - Celaya,Erick Estrada,4 - Low,3 - Low,BELMAMG,ESTRAE14
+INC2908303,New,03/11/2025 09:20,03/11/2025 10:01,Hardware,Martin Cruz,México Ventas,GTI - Desk Side - Mexico - CDMX,Martin Cruz,3 - Medium,3 - Low,CRUZM114,CRUZM114
+INC2881284,New,02/11/2025 13:02,03/11/2025 07:51,Hardware,Alva Mariana Lopez,Monterrey BSC WMEX,GTI - Desk Side - Mexico - BSC,Edgar Guevara,4 - Low,3 - Low,LOPEA68,URQUIS
+INC2907461,New,03/10/2025 15:30,03/10/2025 15:34,Hardware,Harrison Cardenas,Bogota Office,GTI-LAR-SDK-LVL1,Marcela Anguiano,4 - Low,3 - Low,ANGUIM5,ANGUIM5
+INC2907353,New,03/10/2025 13:17,03/10/2025 13:54,Hardware,JOSE PADILLA,Guadalajara WMEX,GTI-LAR-SDK-LVL1,Janett Garcia,4 - Low,3 - Low,GARCJ253,GARCJ253
+INC2904427,New,03/07/2025 12:37,03/10/2025 12:18,Hardware,Jose Adrian Martinez,Monterrey HORIZON WIN,GTI-LAR-SDK-LVL1,Clara Lopez,4 - Low,3 - Low,LOPEZC82,PEREZD46
+INC2907170,New,03/10/2025 09:38,03/10/2025 11:27,Hardware,Luis ALMANZA,Ramos Arizpe WMEX,GTI - Desk Side - Mexico - Ramos Arizpe,Cinthya Alvarez,4 - Low,3 - Low,LOPEZC82,ALVARC40
+INC2897035,New,02-28-2025 11:58:36,03/10/2025 11:03,Hardware,Silvina Cabrera,Whirlpool Argentina Offices,GTI-LAR-SDK-LVL1,Violeta Garcia,4 - Low,3 - Low,PEREZD46,GARCIV47
+INC2902899,New,03/06/2025 10:10,03/10/2025 10:57,Hardware,Diana Monserrat Gonzalez,Celaya ERNA,GTI - Desk Side -  Mexico - Celaya,Martin Lemus,4 - Low,3 - Low,GARCJ253,LEMUSM4
+INC2902991,New,03/06/2025 11:33,03/10/2025 10:52,Hardware,Emerson Esteban Trevino,Monterrey Supermatic,GTI - Desk Side - Mexico - SUPSA,Joel Trevino,4 - Low,3 - Low,GARCJ253,TREVIJ18
+INC2907163,New,03/10/2025 09:30,03/10/2025 10:45,Hardware,Andres Rodriguez,Monterrey Supermatic,GTI - Desk Side - Mexico - SUPSA,Mitzi Salado,4 - Low,3 - Low,RODRA178,SALADM2
+INC2899209,New,03/03/2025 12:04,03/10/2025 10:40,Hardware,Nayeli Novoa Rodriguez,Monterrey BSC WMEX,GTI - Desk Side - Mexico - BSC,Edgar Guevara,4 - Low,3 - Low,NOVOAN,GUEVAE6
+INC2904353,New,03/07/2025 11:32,03/10/2025 10:33,Hardware,Rocio Cardenas,Monterrey BSC WMEX,GTI - Desk Side - Mexico - BSC,Edgar Guevara,4 - Low,3 - Low,CARDER4,GUEVAE6
+INC2893128,New,02-24-2025 09:04:20,03/10/2025 09:56,Hardware,JOSE Romero,Whirlpool Pilar,GTI-LAR-SDK-LVL1,Violeta Garcia,4 - Low,3 - Low,RIVEC18,GARCIV47
+INC2903096,New,03/06/2025 13:57,03/09/2025 14:46,Hardware,Martha Elba Yanez,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Janett Garcia,4 - Low,3 - Low,GARCJ253,GARCJ253
+INC2905395,New,03/08/2025 11:48,03/08/2025 12:32,Hardware,Liliana Abigail Velez,Monterrey HORIZON WIN,GTI-LAR-SDK-LVL1,Clara Lopez,4 - Low,3 - Low,LOPEZC82,LOPEZC82
+INC2904453,New,03/07/2025 12:51,03/08/2025 12:05,Hardware,Ximena Montano,Benton Harbor - GHQ - Ad Center,GTI-LAR-SDK-LVL1,Clara Lopez,4 - Low,3 - Low,LOPEZC82,LOPEZC82
+INC2904438,New,03/07/2025 12:43,03/08/2025 12:05,Hardware,Alan Munoz,Benton Harbor - GHQ - Ad Center,GTI-LAR-SDK-LVL1,Clara Lopez,4 - Low,3 - Low,LOPEZC82,LOPEZC82
+INC2897131,New,02-28-2025 14:50:46,03/08/2025 10:44,Hardware,Francisco Caro,Monterrey Add Center WMEX,GTI-LAR-SDK-WEB-TICKETS,Clara Lopez,4 - Low,3 - Low,HERNM239,LOPEZC82
+INC2904470,New,03/07/2025 13:06,03/08/2025 10:43,Hardware,Martha Elba Yanez,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Clara Lopez,4 - Low,3 - Low,LOPEZC82,LOPEZC82
+INC2904808,New,03/07/2025 19:55,03/07/2025 20:13,Hardware,Aldair Vega,Monterrey Supermatic,GTI-LAR-SDK-LVL1,Maria Hernandez,4 - Low,3 - Low,HERNM239,HERNM239
+INC2895336,New,02-26-2025 15:25:33,03/07/2025 13:53,Hardware,Izet Selene Sanchez,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Daniela Perez,4 - Low,3 - Low,ANGUIM5,PEREZD46
+INC2903897,New,03/07/2025 06:46,03/07/2025 12:17,Hardware,Juan Carlos Rodriguez,Ramos Arizpe WIN,GTI-LAR-SDK-LVL1,Clara Lopez,4 - Low,3 - Low,LOPEZC82,LOPEZC82
+INC2904362,New,03/07/2025 11:40,03/07/2025 11:53,Hardware,Mayra Veronica Gonzalez,Monterrey BSC WMEX,GTI-LAR-SDK-LVL1,Clara Lopez,4 - Low,3 - Low,LOPEZC82,LOPEZC82
+INC2901570,New,03/05/2025 12:27,03/07/2025 10:23,Hardware,Sebastian Emiliano Escobedo,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Janett Garcia,4 - Low,3 - Low,GARCJ253,PEREZD46
+INC2901528,New,03/05/2025 11:38,03/07/2025 10:21,Hardware,Ana Karen Jimenez,Monterrey Add Center WMEX,GTI-LAR-SDK-LVL1,Janett Garcia,4 - Low,3 - Low,GARCJ253,PEREZD46
+INC2900222,New,03/04/2025 10:42,03/07/2025 10:15,Hardware,Raul Solis,Monterrey Supermatic,GTI-LAR-SDK-LVL1,Violeta Garcia,4 - Low,3 - Low,LOPEZC82,PEREZD46
+INC2901473,New,03/05/2025 10:48,03/07/2025 09:24,Hardware,Diego Alejandro Mancilla,Monterrey Supermatic,GTI-LAR-SDK-LVL1,Clara Lopez,4 - Low,3 - Low,LOPEZC82,LOPEZC82
+INC2903027,New,03/06/2025 12:15,03/07/2025 08:43,Hardware,Diego Cisneros,Whirlpool Plastics WIN,GTI - Desk Side - Mexico - Plastics,Andres Hernandez,4 - Low,3 - Low,CISNEDA,HERNA289
+INC2896196,New,02-27-2025 13:54:25,03/07/2025 07:24,Hardware,Maricela Rodriguez,Ramos Arizpe WIN,GTI - Desk Side - Mexico - Ramos Arizpe,Edgar Lara,4 - Low,3 - Low,GARCJ253,LARAE21
+INC2900129,New,03/04/2025 09:39,03/04/2025 10:30,Hardware,Jorge Luis Rubio,Monterrey HORIZON WIN,GTI - Desk Side - Mexico - Horizon,Josue Covarrubias,4 - Low,3 - Low,LOPEZC82,CASTIR25
+INC2851503,New,01/09/2025 13:21,02-28-2025 12:35:37,Hardware,RAFAEL Flores,Guatemala Sales,Desk Side - LAR - Guatemala,Pedro Boc,4 - Low,3 - Low,BOCP,BOCP
